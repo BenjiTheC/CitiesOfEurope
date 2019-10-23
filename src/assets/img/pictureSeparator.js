@@ -1,4 +1,4 @@
-const pictureSeperator = `data:image/base64;
+const pictureSeperator = `data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAqgAAAFUCAYAAADoAM6jAAAABmJLR0QA/wD/AP+g
 vaeTAAAwbElEQVR42u3dB7itR1ko4DlnpxNCCpAQlCooRYhoELCFKtLEKF0BAQtF
 DD1wvUKkRBEQ4QoiliiKNCWKNBVBijSFgIFEEIhApJMEIoTknJO7vrtm7p41a/61

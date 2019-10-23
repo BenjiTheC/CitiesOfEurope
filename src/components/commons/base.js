@@ -31,6 +31,7 @@ const baseStyle = {
     },
     colors: {
         white: '#FFFFFF',
+        grey: '#E6E6E6',
     },
 };
 

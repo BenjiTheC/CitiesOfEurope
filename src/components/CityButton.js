@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { TouchableOpacity, View, Text, StyleSheet, Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
+import { baseStyle } from './commons';
 
 export default class CityButton extends PureComponent {
     static propTypes = {
@@ -9,7 +10,7 @@ export default class CityButton extends PureComponent {
     };
 
     get buttonDimension() {
-        return Dimensions.get('window').width - 22 * 2;
+        return Dimensions.get('window').width - baseStyle.space.doubleExtraLarge * 2;
     }
 
     render() {
@@ -26,25 +27,25 @@ export default class CityButton extends PureComponent {
 const styles = StyleSheet.create({
     cityCardButton: {
         height: 100,
-        borderRadius: 8,
-        padding: 6,
-        margin: 22,
+        borderRadius: baseStyle.space.small,
+        padding: baseStyle.space.small,
+        margin: baseStyle.space.doubleExtraLarge,
         backgroundColor: '#ffffff',
         shadowOffset: {
-            width: 3,
-            height: 3,
+            width: baseStyle.space.mini,
+            height: baseStyle.space.mini,
         },
-        shadowOpacity: 0.5,
-        shadowRadius: 3,
+        shadowOpacity: 0.3,
+        shadowRadius: baseStyle.space.mini,
     },
     cityCardContainer: {
-        borderRadius: 8,
+        borderRadius: baseStyle.space.small,
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
     cityCardText: {
-        fontSize: 20,
-        fontFamily: 'Rubik-Light',
+        fontSize: baseStyle.fontSize.middle,
+        fontFamily: baseStyle.fontFamily.light,
     },
 });

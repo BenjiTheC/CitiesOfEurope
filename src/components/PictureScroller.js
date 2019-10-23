@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet, Image, Dimensions } from 'react-native';
+import { View, Text, StatusBar, FlatList, StyleSheet, Image, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { ImageCard, CityButton } from './';
 import pictureSeperator from '../assets/img/pictureSeparator';
 import { setCurrentCity } from '../redux/actions';
+import { baseStyle } from './commons';
 
 const BANNER_BACKGROUND_BY_CITY = {
     barcelona: 'barcelonaBackgroundPic.jpg',
@@ -32,7 +33,10 @@ class PictureScroller extends Component {
         return (
             <Image
                 source={{ uri: pictureSeperator }}
-                style={{ width: this.screenWidth, height: 25 }}
+                style={[
+                    styles.listSeperator,
+                    { width: this.screenWidth - baseStyle.space.small * 2 },
+                ]}
             />
         );
     }
@@ -40,18 +44,27 @@ class PictureScroller extends Component {
     render() {
         return (
             <>
+                <StatusBar barStyle={'dark-content'} />
                 {this.renderCityHeader()}
                 <FlatList
                     data={this.props.arrayOfPictures}
                     renderItem={({ item }) => <ImageCard picture={item} />}
+                    ListHeaderComponent={() => this.renderListSeperator()}
                     ItemSeparatorComponent={() => this.renderListSeperator()}
+                    stickyHeaderIndices={[0]}
                 />
             </>
         );
     }
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    listSeperator: {
+        height: 45,
+        marginHorizontal: baseStyle.space.small,
+        backgroundColor: baseStyle.colors.white,
+    },
+});
 
 const mapStateToProps = state => {
     const { currentCity, cityPictures } = state;

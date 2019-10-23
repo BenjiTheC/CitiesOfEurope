@@ -6,6 +6,8 @@ import baseStyle from './commons/base';
 import { fetchPicturesOfAllCities, setCurrentCity } from '../redux/actions';
 
 const APP_NAME = 'Cities Of Europe';
+const AUTHOR_NAME = 'Benjamin Cai';
+const BY = 'By ';
 const BANNER_BACKGROUND_URI = 'bannerBackground.jpg';
 
 class LandingPage extends Component {
@@ -46,6 +48,12 @@ class LandingPage extends Component {
                         { width: this.screenWidth, height: this.screenWidth / 2.5 },
                     ]}>
                     <Text style={styles.headerText}>{APP_NAME}</Text>
+                    <Text style={styles.authorText}>
+                        <Text>{BY}</Text>
+                        <Text style={{ fontFamily: baseStyle.fontFamily.regular }}>
+                            {AUTHOR_NAME}
+                        </Text>
+                    </Text>
                 </View>
                 <View>
                     <CityButton
@@ -105,16 +113,18 @@ const styles = StyleSheet.create({
     },
     headerText: {
         fontSize: baseStyle.fontSize.doubleExtraLarge,
-        color: baseStyle.colors.white,
         fontFamily: baseStyle.fontFamily.black,
+        color: baseStyle.colors.white,
+    },
+    authorText: {
+        position: 'absolute',
+        right: baseStyle.space.middle,
+        bottom: baseStyle.space.small,
+        fontSize: baseStyle.fontSize.middle,
+        fontFamily: baseStyle.fontFamily.light,
+        color: baseStyle.colors.white,
     },
 });
-
-const mapStateToProps = state => {
-    return {
-        currentCity: state.currentCity,
-    };
-};
 
 const mapDispatchToProps = {
     fetchPicturesOfAllCities,
