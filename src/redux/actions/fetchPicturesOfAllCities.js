@@ -10,7 +10,7 @@ const MAP_CITYNAMES_TO_TYPES = {
 
 export const fetchPicturesOfAllCities = () => {
     return async dispatch => {
-        for (const cityName of ['barcelona', 'florence', 'prague']) {
+        for (const cityName of ['barcelona', 'florence', 'prague', 'paris']) {
             let picturesOfCity;
 
             try {
