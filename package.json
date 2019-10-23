@@ -11,12 +11,13 @@
   },
   "dependencies": {
     "prop-types": "^15.7.2",
+    "react": "16.9.0",
+    "react-native": "0.61.2",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
-    "urijs": "^1.19.2",
-    "react": "16.9.0",
-    "react-native": "0.61.2"
+    "urijs": "^1.19.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
