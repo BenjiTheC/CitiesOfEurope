@@ -1,6 +1,6 @@
 import * as types from '../types';
 
-const INITIAL_STATE = 'barcelona'; //null;
+const INITIAL_STATE = null;
 
 const currentCityReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
